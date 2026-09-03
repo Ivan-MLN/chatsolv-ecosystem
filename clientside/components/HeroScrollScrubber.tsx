@@ -26,67 +26,51 @@ const sentenceContainer: Variants = {
 
 const wordBlurVariant: Variants = {
   hidden: { 
-    opacity: 0, 
-    filter: "blur(10px)", 
-    y: 10,
-    scale: 0.96
+    opacity: 1, 
+    filter: "blur(0px)", 
+    y: 0,
+    scale: 1
   },
   show: { 
     opacity: 1, 
     filter: "blur(0px)", 
     y: 0,
     scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 200,
-      damping: 20,
-      mass: 0.5
-    }
   },
   exit: {
     opacity: 0,
-    filter: "blur(6px)",
-    y: -8,
-    transition: { duration: 0.16 }
+    filter: "blur(4px)",
+    y: -6,
+    transition: { duration: 0.15 }
   }
 };
 
 const introContainerStagger: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   show: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.14,
-      delayChildren: 0.08,
-    }
   },
   exit: {
     opacity: 0,
     transition: {
-      duration: 0.18,
+      duration: 0.15,
       ease: "easeInOut"
     }
   }
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 16, filter: "blur(6px)" },
+  hidden: { opacity: 1, y: 0, filter: "blur(0px)" },
   show: { 
     opacity: 1, 
     y: 0, 
     filter: "blur(0px)",
-    transition: {
-      type: "spring",
-      stiffness: 240,
-      damping: 22,
-      mass: 0.55
-    }
   },
   exit: { 
     opacity: 0, 
-    y: -8, 
-    filter: "blur(4px)",
-    transition: { duration: 0.16, ease: "easeInOut" }
+    y: -6, 
+    filter: "blur(2px)",
+    transition: { duration: 0.15 }
   }
 };
 
