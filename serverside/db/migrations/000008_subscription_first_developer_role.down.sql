@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS payments;
+ALTER TABLE subscriptions DROP COLUMN IF EXISTS cancel_at_period_end;
+ALTER TABLE subscriptions DROP COLUMN IF EXISTS payment_reference;
+ALTER TABLE subscriptions DROP COLUMN IF EXISTS current_period_end;
+ALTER TABLE subscriptions DROP COLUMN IF EXISTS current_period_start;
+ALTER TABLE subscriptions DROP COLUMN IF EXISTS amount;
+ALTER TABLE subscriptions DROP COLUMN IF EXISTS currency;
+ALTER TABLE subscriptions DROP COLUMN IF EXISTS billing_cycle;
+ALTER TABLE subscriptions DROP COLUMN IF EXISTS plan_id;
+ALTER TABLE users DROP COLUMN IF EXISTS platform_role;

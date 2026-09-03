@@ -1,0 +1,191 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --sage-dark: #618264;
+    --sage-primary: #79AC78;
+    --sage-soft: #B0D9B1;
+    --sage-light: #D0E7D2;
+    --sage-canvas: #d6ebd8;
+  }
+
+  body {
+    background-color: var(--sage-canvas);
+    color: #162b19;
+    font-family: var(--font-pjs), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* GPU-accelerated dynamic liquid fluid motion */
+@keyframes float-1 {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(240px, -140px, 0) scale(1.3) rotate(70deg);
+  }
+  50% {
+    transform: translate3d(120px, 180px, 0) scale(0.85) rotate(140deg);
+  }
+  75% {
+    transform: translate3d(-160px, 80px, 0) scale(1.25) rotate(220deg);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0) scale(1) rotate(360deg);
+  }
+}
+
+@keyframes float-2 {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(-260px, 160px, 0) scale(1.25) rotate(-80deg);
+  }
+  50% {
+    transform: translate3d(-120px, -160px, 0) scale(0.85) rotate(-160deg);
+  }
+  75% {
+    transform: translate3d(180px, -80px, 0) scale(1.2) rotate(-260deg);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0) scale(1) rotate(-360deg);
+  }
+}
+
+@keyframes float-3 {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(1.1) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(220px, 200px, 0) scale(0.8) rotate(110deg);
+  }
+  60% {
+    transform: translate3d(-200px, -120px, 0) scale(1.35) rotate(230deg);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0) scale(1.1) rotate(360deg);
+  }
+}
+
+@keyframes float-4 {
+  0% {
+    transform: translate3d(0px, 0px, 0) scale(0.9) rotate(0deg);
+  }
+  35% {
+    transform: translate3d(-220px, -180px, 0) scale(1.35) rotate(-110deg);
+  }
+  70% {
+    transform: translate3d(180px, -80px, 0) scale(0.95) rotate(-240deg);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0) scale(0.9) rotate(-360deg);
+  }
+}
+
+@keyframes float-center {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 0.85;
+  }
+  33% {
+    transform: translate(-45%, -55%) scale(1.25) rotate(120deg);
+    opacity: 1;
+  }
+  66% {
+    transform: translate(-55%, -45%) scale(0.9) rotate(240deg);
+    opacity: 0.8;
+  }
+}
+
+.animate-blob-1 {
+  animation: float-1 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
+}
+
+.animate-blob-2 {
+  animation: float-2 8.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
+}
+
+.animate-blob-3 {
+  animation: float-3 7.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
+}
+
+.animate-blob-4 {
+  animation: float-4 9s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform;
+}
+
+.animate-blob-center {
+  animation: float-center 6.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform, opacity;
+}
+
+/* Subtle dot matrix grid matching deep sage */
+.bg-noise {
+  background-image: radial-gradient(rgba(97, 130, 100, 0.22) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Glassmorphism card */
+.glass-panel-sage {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow: 0 20px 40px -15px rgba(97, 130, 100, 0.18), 0 0 0 1px rgba(97, 130, 100, 0.1);
+}
+
+/* ========================================================================= */
+/* 3D TACTILE GLASS BUTTONS                                                  */
+/* ========================================================================= */
+.btn-3d-emerald {
+  background: linear-gradient(180deg, #6d9370 0%, #527355 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #3b533e;
+  box-shadow: 0 8px 20px -6px rgba(49, 74, 52, 0.45), 0 2px 4px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+  transform: translateY(0);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-3d-emerald:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #78a17c 0%, #5b7f5f 100%);
+  box-shadow: 0 14px 28px -6px rgba(49, 74, 52, 0.5), 0 4px 8px rgba(0, 0, 0, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.65);
+}
+
+.btn-3d-emerald:active {
+  transform: translateY(2px);
+  border-bottom: 1px solid #3b533e;
+  box-shadow: 0 3px 8px -2px rgba(49, 74, 52, 0.35), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d-glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(240, 248, 241, 0.72) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.95);
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(121, 172, 120, 0.3);
+  border-bottom: 3px solid #b6d3b8;
+  box-shadow: 0 8px 20px -6px rgba(97, 130, 100, 0.2), 0 2px 4px rgba(0, 0, 0, 0.04), inset 0 1px 1px #ffffff;
+  transform: translateY(0);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-3d-glass:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(244, 250, 245, 0.85) 100%);
+  box-shadow: 0 14px 28px -6px rgba(97, 130, 100, 0.28), 0 4px 8px rgba(0, 0, 0, 0.06), inset 0 1px 2px #ffffff;
+}
+
+.btn-3d-glass:active {
+  transform: translateY(2px);
+  border-bottom: 1px solid #b6d3b8;
+  box-shadow: 0 3px 8px -2px rgba(97, 130, 100, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.08);
+}

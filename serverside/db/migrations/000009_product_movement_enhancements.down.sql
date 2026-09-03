@@ -1,0 +1,22 @@
+-- 000009_product_movement_enhancements.down.sql
+DROP TABLE IF EXISTS agent_templates;
+DROP TABLE IF EXISTS conversation_events;
+DROP INDEX IF EXISTS conversations_mode_status_idx;
+DROP INDEX IF EXISTS conversations_assigned_admin_idx;
+ALTER TABLE conversations DROP COLUMN IF EXISTS human_ended_at;
+ALTER TABLE conversations DROP COLUMN IF EXISTS human_started_at;
+ALTER TABLE conversations DROP COLUMN IF EXISTS handoff_reason;
+ALTER TABLE conversations DROP COLUMN IF EXISTS current_handoff_id;
+ALTER TABLE conversations DROP COLUMN IF EXISTS assigned_admin_id;
+ALTER TABLE conversations DROP CONSTRAINT IF EXISTS conversations_mode_check;
+ALTER TABLE conversations ADD CONSTRAINT conversations_mode_check CHECK (mode IN ('agent', 'human'));
+DROP TABLE IF EXISTS handoff_requests;
+DROP TABLE IF EXISTS workspace_admins;
+DROP TABLE IF EXISTS onboarding_profiles;
+ALTER TABLE business_profiles DROP COLUMN IF EXISTS operating_hours;
+ALTER TABLE business_profiles DROP COLUMN IF EXISTS handoff_rules;
+ALTER TABLE business_profiles DROP COLUMN IF EXISTS primary_use_cases;
+ALTER TABLE business_profiles DROP COLUMN IF EXISTS communication_style;
+ALTER TABLE business_profiles DROP COLUMN IF EXISTS products_services;
+ALTER TABLE business_profiles DROP COLUMN IF EXISTS target_customer;
+ALTER TABLE business_profiles DROP COLUMN IF EXISTS business_type;

@@ -1,0 +1,3 @@
+# Agent Personality
+
+Configuration pending.
