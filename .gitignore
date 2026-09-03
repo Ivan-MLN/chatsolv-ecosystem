@@ -1,14 +1,12 @@
-# Node
+# Dependencies & Modules
 node_modules/
+vendor/
+
+# Build & Deployments Output
 .next/
 out/
 build/
 dist/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Go & Binaries
 bin/
 *.exe
 *.exe~
@@ -17,31 +15,30 @@ bin/
 *.dylib
 *.test
 *.out
+
+# Logs & Temporary debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 server.log
+logs/
+data/hermes/profiles/*/logs/
 
-# Environment & Credentials
-.env
-.env.local
-.env.*.local
-auth.json
-*.pem
-*.key
-*.lock
-
-# Sessions & Internal Cache
+# Cache & Local State
+.cache/
+.turbo/
 data/sessions/
 data/minio/
 data/hermes/profiles/*/sessions/
-data/hermes/profiles/*/logs/
 data/hermes/profiles/*/cache/
 data/hermes/profiles/*/audio_cache/
 data/hermes/profiles/*/image_cache/
 data/hermes/profiles/*/state.db*
 data/hermes/profiles/*/.hermes_history
-data/hermes/profiles/*/.env
-data/hermes/profiles/*/auth.json
 
-# OS & IDE
+# OS & Editor Files
 .DS_Store
 .vscode/
 .idea/
