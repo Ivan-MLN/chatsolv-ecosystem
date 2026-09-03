@@ -23,23 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 server.log
-logs/
-data/hermes/profiles/*/logs/
-
-# Cache & Local State
-.cache/
-.turbo/
-data/sessions/
-data/minio/
-data/hermes/profiles/*/sessions/
-data/hermes/profiles/*/cache/
-data/hermes/profiles/*/audio_cache/
-data/hermes/profiles/*/image_cache/
-data/hermes/profiles/*/state.db*
-data/hermes/profiles/*/.hermes_history
 
 # OS & Editor Files
 .DS_Store
 .vscode/
 .idea/
-.hermes/
